@@ -1,0 +1,23 @@
+<html>    
+<head>
+<link rel="stylesheet" type="text/css" href="style.css"> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+     $("input").keyup(fuction(){
+        var name = $("input").val();
+        $.post("sugestion.php", {
+            suggestion: name 
+        }, fuction(data, status){
+            $("#text").html(data)
+        } 
+        });
+     });
+});
+</script>  
+</head>
+<body> 
+<button>Click me to get data</button>
+<p id="text"></p>
+</body>
+</html>
